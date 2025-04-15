@@ -14,7 +14,7 @@ class BooksListViewItem extends StatelessWidget {
         height: index==0? 225 : 195,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
-          image: DecorationImage(image: AssetImage(AppAssets.test)),
+          image: DecorationImage(image: AssetImage(AppAssets.test1)),
         ),
       ),
     );

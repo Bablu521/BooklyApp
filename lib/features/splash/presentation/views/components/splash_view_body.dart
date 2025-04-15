@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/routes/app_router.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/splash/presentation/views/components/splash_logo.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +53,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         SplashLogo(),
         SlideTransition(
           position: slidingAnimation,
-          child: Text("Read Free Books"),
+          child: Text("Read Free Books" , style: AppStyles.style14,),
         ),
       ],
     );
