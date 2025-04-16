@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(FontAwesomeIcons.magnifyingGlass, size: 19, color: Colors.white ,),
+            icon: Icon(FontAwesomeIcons.magnifyingGlass, size: 22, color: Colors.white ,),
           ),
         ],
       ),

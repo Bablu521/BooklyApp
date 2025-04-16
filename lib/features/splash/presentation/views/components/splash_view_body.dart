@@ -13,16 +13,22 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
-  late Animation<Offset> slidingAnimation;
+  late Animation<Offset> slidingAnimation1;
+  late Animation<Offset> slidingAnimation2;
   @override
   void initState() {
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 2),
     );
-    slidingAnimation = Tween<Offset>(
-      begin: (Offset(0, 7)),
+    slidingAnimation1 = Tween<Offset>(
+      begin: (Offset(0, 1.5)),
+      end: Offset(0, 0),
+    ).animate(animationController);
+    animationController.forward();
+    slidingAnimation2 = Tween<Offset>(
+      begin: (Offset(0, -4.5)),
       end: Offset(0, 0),
     ).animate(animationController);
     animationController.forward();
@@ -36,7 +42,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   goToHomeScreen() {
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 4), () {
       if (mounted) {
         Navigator.pushReplacementNamed(context, AppRouter.homeView);
       }
@@ -50,9 +56,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(width: double.infinity),
-        SplashLogo(),
         SlideTransition(
-          position: slidingAnimation,
+          position: slidingAnimation1,
+          child: SplashLogo()),
+        SlideTransition(
+          position: slidingAnimation2,
           child: Text("Read Free Books" , style: AppStyles.style14,),
         ),
       ],
