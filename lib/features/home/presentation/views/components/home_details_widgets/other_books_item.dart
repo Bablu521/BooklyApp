@@ -21,7 +21,7 @@ class OtherBooksItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             image: DecorationImage(
-              image: NetworkImage(book.volumeInfo.imageLinks?.thumbnail?? ""),
+              image: NetworkImage(book.volumeInfo.imageLinks?.thumbnail?? "https://cdn-icons-png.flaticon.com/128/2436/2436702.png"),
               fit: BoxFit.fill,
             ),
           ),

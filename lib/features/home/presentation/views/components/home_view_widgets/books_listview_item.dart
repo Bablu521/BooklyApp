@@ -15,22 +15,23 @@ class BooksListViewItem extends StatelessWidget {
         onTap: () {
           Navigator.pushNamed(context, AppRouter.homeDetailsView , arguments: book);
         },
-        child:Align(
-          alignment: Alignment.center, // Align shorter items to bottom
+        child: Align(
+          alignment: Alignment.center,
           child: Container(
-          width: index == 0 ? 150 : 130,
-          height: index == 0 ? 225 : 195,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(
-              image: NetworkImage(
-                book.volumeInfo.imageLinks?.thumbnail ?? "",
+            width: index == 0 ? 150 : 130,
+            height: index == 0 ? 225 : 195,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              image: DecorationImage(
+                image: NetworkImage(
+                  book.volumeInfo.imageLinks?.thumbnail ?? "https://cdn-icons-png.flaticon.com/128/2436/2436702.png",
+                ),
+                fit: BoxFit.fill,
               ),
-              fit: BoxFit.fill,
             ),
           ),
         ),
-      ),)
+      ),
     );
   }
 }
