@@ -10,9 +10,10 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<String, List<BookModel>>> fetchAllBooks() async {
     try {
-      var data = await ApiService(
-        dio: Dio(),
-      ).getData(endPoint: "volumes?Filtering=free-ebooks&q=subject:general");
+      var data = await ApiService(dio: Dio()).getData(
+        endPoint:
+            "volumes?Filtering=free-ebooks&q=flutter state mangement&startIndex=1",
+      );
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));
@@ -26,9 +27,25 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<String, List<BookModel>>> fetchBestSellerBooks() async {
     try {
+      var data = await ApiService(
+        dio: Dio(),
+      ).getData(endPoint: "volumes?q=dart language&startIndex=0");
+      List<BookModel> books = [];
+      for (var item in data["items"]) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
+
+  @override
+  Future<Either<String, List<BookModel>>> fetchOtherBooks() async {
+    try {
       var data = await ApiService(dio: Dio()).getData(
         endPoint:
-            "volumes?Filtering=free-ebooks&q=subject:general&Sorting=Sorting",
+            "volumes?Filtering=free-ebooks&q=flutter widget&startIndex=22",
       );
       List<BookModel> books = [];
       for (var item in data["items"]) {

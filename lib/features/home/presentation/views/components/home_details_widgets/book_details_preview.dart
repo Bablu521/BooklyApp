@@ -1,9 +1,11 @@
 import 'package:bookly_app/core/utils/colors.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/model/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
-class BooksDetailsPreview extends StatelessWidget {
-  const BooksDetailsPreview({super.key});
+class BookDetailsPreview extends StatelessWidget {
+  final BookModel book;
+  const BookDetailsPreview({super.key , required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,9 @@ class BooksDetailsPreview extends StatelessWidget {
                 color: Colors.white,
               ),
               child: Text(
-                "19.99€",
+                book.saleInfo?.listPrice?.amount != null
+                              ? "${book.saleInfo!.listPrice!.amount!.toInt()} ${book.saleInfo!.listPrice!.currencyCode ?? ''}"
+                              : "Free",
                 style: AppStyles.style18.copyWith(color: Colors.black),
               ),
             ),

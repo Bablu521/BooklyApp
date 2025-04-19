@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/components/home_details_widgets/books_details_section.dart';
+import 'package:bookly_app/features/home/data/model/book_model/book_model.dart';
+import 'package:bookly_app/features/home/presentation/views/components/home_details_widgets/book_details.dart';
 import 'package:bookly_app/features/home/presentation/views/components/home_details_widgets/custom_home_details_appbar.dart';
-import 'package:bookly_app/features/home/presentation/views/components/home_details_widgets/books_details_preview.dart';
 import 'package:bookly_app/features/home/presentation/views/components/home_details_widgets/other_books_listview.dart';
 import 'package:flutter/material.dart';
 
@@ -10,13 +10,13 @@ class HomeDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BookModel book =
+        ModalRoute.of(context)!.settings.arguments as BookModel;
     return SingleChildScrollView(
       child: Column(
         children: [
           CustomHomeDetailsAppbar(),
-          BooksDetailsSection(),
-          SizedBox(height: 30),
-          BooksDetailsPreview(),
+          BookDetails(book: book),
           SizedBox(height: 45),
           Padding(
             padding: EdgeInsets.only(left: 30),
@@ -30,7 +30,7 @@ class HomeDetailsBody extends StatelessWidget {
           ),
           SizedBox(height: 15),
           OtherBooksListView(),
-          SizedBox(height: 35,)
+          SizedBox(height: 35),
         ],
       ),
     );
