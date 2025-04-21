@@ -21,7 +21,7 @@ class HomeDetailsView extends StatelessWidget {
             create: (context) => ShowOtherBooksCubit(),
           ),
         ],
-        child: const Scaffold(body: HomeDetailsBody()),
+        child: const Scaffold(body: HomeDetailsBody(),),
       ),
     );
   }

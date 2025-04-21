@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/routes/app_router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/core/widgets/books_rating.dart';
-import 'package:bookly_app/features/home/data/model/book_model/book_model.dart';
+import 'package:bookly_app/core/model/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerItem extends StatelessWidget {
@@ -31,7 +31,7 @@ class BestSellerItem extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                         image: DecorationImage(
                           image: NetworkImage(
-                            book.volumeInfo.imageLinks?.thumbnail ?? "https://cdn-icons-png.flaticon.com/128/2436/2436702.png",
+                            book.volumeInfo.imageLinks?.thumbnail ?? "https://cdn-icons-png.flaticon.com/128/7340/7340665.png",
                           ),
                           fit: BoxFit.fill,
                         ),
@@ -58,6 +58,8 @@ class BestSellerItem extends StatelessWidget {
                     Text(
                       book.volumeInfo.authors?[0] ?? "Author",
                       style: AppStyles.style14,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -6,6 +6,7 @@ import 'package:bookly_app/features/home/logic/manager/all_books_cubit/cubit/all
 import 'package:bookly_app/features/home/logic/manager/best_seller_books_cubit/cubit/best_seller_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/home_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view.dart';
+import 'package:bookly_app/features/search/presentation/views/search_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,6 +34,7 @@ class BooklyApp extends StatelessWidget {
         routes: {
           AppRouter.homeView: (context) => HomeView(),
           AppRouter.homeDetailsView: (context) => HomeDetailsView(),
+          AppRouter.searchView: (context) => SearchView()
         },
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: AppColor.darkBlue,

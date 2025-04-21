@@ -1,6 +1,6 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/core/widgets/books_rating.dart';
-import 'package:bookly_app/features/home/data/model/book_model/book_model.dart';
+import 'package:bookly_app/core/model/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
@@ -20,7 +20,8 @@ class BookDetailsSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               image: DecorationImage(
                 image: NetworkImage(
-                  book.volumeInfo.imageLinks?.thumbnail ?? "",
+                  book.volumeInfo.imageLinks?.thumbnail ??
+                      "https://cdn-icons-png.flaticon.com/128/7340/7340665.png",
                 ),
                 fit: BoxFit.fill,
               ),
@@ -44,6 +45,8 @@ class BookDetailsSection extends StatelessWidget {
             fontWeight: FontWeight.w500,
             fontFamily: "Montserrat-Medium",
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         SizedBox(height: 16),
         BooksRating(),

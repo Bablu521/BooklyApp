@@ -1,6 +1,6 @@
 import 'package:bookly_app/features/home/logic/manager/best_seller_books_cubit/cubit/best_seller_books_cubit.dart';
 import 'package:bookly_app/features/home/logic/manager/best_seller_books_cubit/cubit/best_seller_books_state.dart';
-import 'package:bookly_app/features/home/presentation/views/components/home_view_widgets/best_seller_item.dart';
+import 'package:bookly_app/core/widgets/best_seller_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

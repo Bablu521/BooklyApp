@@ -11,7 +11,7 @@ class CustomHomeDetailsAppbar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(onPressed: (){
-            Navigator.maybePop(context);}, icon: Icon(Icons.arrow_back_ios, size: 22 ,color: Colors.white ,)),
+            Navigator.maybePop(context);}, icon: Icon(Icons.close, size: 22 ,color: Colors.white ,)),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.shopping_cart_outlined, size: 22, color: Colors.white ,),

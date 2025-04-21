@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/routes/app_router.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 20 , top: 25),
+      padding: const EdgeInsets.only(right: 20, top: 25),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -20,8 +21,14 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
-            icon: Icon(FontAwesomeIcons.magnifyingGlass, size: 22, color: Colors.white ,),
+            onPressed: () {
+              Navigator.pushNamed(context, AppRouter.searchView);
+            },
+            icon: Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              size: 22,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
