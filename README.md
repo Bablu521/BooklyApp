@@ -1,6 +1,6 @@
 # bookly_app
 
-A new Flutter project using MVVM pattern & singleton pattern (getIt) & dio & cubit.
+A new Flutter project using MVVM pattern & singleton pattern (get_It package) & dio & cubit & url_launcher package.
 
 ## Getting Started
 
