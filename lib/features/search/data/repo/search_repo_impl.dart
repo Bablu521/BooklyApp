@@ -2,7 +2,6 @@ import 'package:bookly_app/core/networking/api_service.dart';
 import 'package:bookly_app/core/model/book_model/book_model.dart';
 import 'package:bookly_app/features/search/data/repo/search_repo.dart';
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 
 class SearchRepoImpl implements SearchRepo {
   final ApiService apiService;
@@ -12,9 +11,7 @@ class SearchRepoImpl implements SearchRepo {
     required String searchKey,
   }) async {
     try {
-      var data = await ApiService(
-        dio: Dio(),
-      ).getData(endPoint: "volumes?q=$searchKey");
+      var data = await apiService.getData(endPoint: "volumes?q=$searchKey");
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));
